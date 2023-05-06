@@ -6,7 +6,8 @@ import torch.utils.data as data
 from model import CharModel
 
 # load ascii text and covert to lowercase
-filename = "wonderland.txt"
+#filename = "wonderland.txt"
+filename = "train_quotes_dataset.txt"
 raw_text = open(filename, 'r', encoding='utf-8').read()
 raw_text = raw_text.lower()
 
@@ -40,7 +41,7 @@ X = X / float(n_vocab)
 y = torch.tensor(dataY)
 print(X.shape, y.shape)
 
-n_epochs = 40
+n_epochs = 10
 batch_size = 128
 model = CharModel(n_vocab=n_vocab)
 
